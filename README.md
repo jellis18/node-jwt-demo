@@ -1,5 +1,8 @@
 # JWT Authentication with Node, MongoDB, and Express
 
+This repo is based off of the tutorial [here](https://www.youtube.com/watch?v=2jqok-WgelI&t=1s&ab_channel=DevEd)
+
+I have added a simple deployment with `docker-compose` so you don't have to create a Mongo DB yourself.
 ## Run locally
 
 Create a `config.env` file styled after `config.env.example`. Its usually good practice not to put
