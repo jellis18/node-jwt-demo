@@ -1,0 +1,29 @@
+version: "3"
+services:
+  mongo:
+    image: mongo:3.6-xenial
+    environment:
+      - MONGO_INITDB_DATABASE=jwt
+    ports:
+      - "27017:27017"
+    networks:
+      - jwt-backend-demo
+    volumes:
+      - mongo-data:/data/db
+
+  api-server:
+    build: .
+    env_file: config.env
+    ports:
+      - "3000:3000"
+    networks:
+      - jwt-backend-demo
+    depends_on:
+      - mongo
+
+networks:
+  jwt-backend-demo:
+    driver: bridge
+
+volumes:
+  mongo-data:
